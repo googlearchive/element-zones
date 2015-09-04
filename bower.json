@@ -1,0 +1,21 @@
+{
+  "name": "element-zones",
+  "version": "0.1.0",
+  "authors": [
+    "Justin Fagnani <justin@fagnani.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "imd": "PolymerLabs/imd#export"
+  },
+  "devDependencies": {
+    "polymer": "Polymer/polymer#~1.1.1"
+  }
+}

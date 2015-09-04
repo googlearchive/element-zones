@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="import" href="../../element-zones/element-zones.html">
+    <link rel="import" href="../../polymer/polymer.html">
+  </head>
+  <body>
+    <dom-module id="x-foo">
+      <template>
+        <h1>x-foo</h1>
+        <div>{{message}}</div>
+      </template>
+      <script>
+      (function() {
+        'use strict';
+
+        Polymer({
+
+          properties: {
+            message: {
+              type: String,
+              observer: '_messageChanged',
+            }
+          },
+
+          listeners: {
+            'an-event': '_onAnEvent',
+          },
+
+          created() {
+            console.log('x-foo.created');
+            setTimeout(function() {
+              this.fire('an-event');
+            }.bind(this));
+            // use some async time - this should show up in create totals
+            // setTimeout(function() {
+            //   let x = 0;
+            //   for (let i = 0; i < 1000000; i++) {
+            //     x += i;
+            //   }
+            //   console.log(x);
+            // });
+          },
+
+          attached() {
+            console.log('x-foo.attached');
+            // this.fire('an-event');
+          },
+
+          _onAnEvent() {
+            // this time should show up in created, not attached, because
+            // listeners are registered in created
+            let x = 0;
+            for (let i = 0; i < 1000000; i++) {
+              x += i;
+            }
+            console.log(x);
+          },
+
+          detached() {
+            console.log('x-foo.detached');
+          },
+
+          _messageChanged() {
+            console.log('x-foo._messageChanged');
+          },
+        });
+      })();
+      </script>
+    </dom-module>
+    <x-foo message="working as intended"></x-foo>
+  </body>
+</html>

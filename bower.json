@@ -16,6 +16,8 @@
     "imd": "PolymerLabs/imd#export"
   },
   "devDependencies": {
-    "polymer": "Polymer/polymer#~1.1.1"
+    "chai": "chaijs/chai#^3.3.0",
+    "mocha": "mochajs/mocha#^2.3.0",
+    "polymer": "Polymer/polymer#^1.1.2"
   }
 }

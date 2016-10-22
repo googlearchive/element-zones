@@ -13,11 +13,11 @@
     "tests"
   ],
   "dependencies": {
-    "imd": "PolymerLabs/imd#export"
+    "imd": "PolymerLabs/imd"
   },
   "devDependencies": {
     "chai": "chaijs/chai#^3.3.0",
     "mocha": "mochajs/mocha#^2.3.0",
-    "polymer": "Polymer/polymer#^1.1.2"
+    "polymer": "Polymer/polymer#1.6.1"
   }
 }
